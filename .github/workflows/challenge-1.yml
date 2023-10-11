@@ -1,0 +1,22 @@
+name: Challege One
+
+on: push
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
+  job-2:
+    runs-on: windows-latest
+    steps:
+    - run: "Get-Date"
+  job-3:
+    runs-on: macos-latest
+    steps:
+    - run: date
+  job-4:
+    runs-on: ubuntu-latest
+    needs: [job-1, job-2, job-3]
+    steps:
+    - run: date
